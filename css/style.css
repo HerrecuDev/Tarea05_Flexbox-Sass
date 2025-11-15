@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.imagenPrincipal {
+  background-image: url(/img/hero.jpg);
+}
+
+footer {
+  background-color: black;
+}
