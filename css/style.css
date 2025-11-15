@@ -4,18 +4,50 @@
 }
 
 body {
-  background-color: black;
+  background-color: white;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .imagenPrincipal {
   background-image: url(/img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+.imagenPrincipal h1, .imagenPrincipal p {
+  color: white;
+}
+
+.color-fondo {
+  background: -webkit-gradient(linear, left top, right top, from(#7b0030), to(rgba(163, 79, 0, 0.9058823529)));
+  background: linear-gradient(to right, #7b0030, rgba(163, 79, 0, 0.9058823529));
+}
+.color-fondo ul p {
+  color: white;
 }
 
 footer {
   background-color: black;
 }
+footer ul {
+  list-style: none;
+}
+footer ul li {
+  color: white;
+}/*# sourceMappingURL=style.css.map */
