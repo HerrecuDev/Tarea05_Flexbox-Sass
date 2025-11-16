@@ -36,10 +36,36 @@ justify-content: space-around;
 
    
 }
-
+//Padre
 .color-fondo{
-
+    border: black solid 5px;
+    
     background: $color_degradado;
+
+    div{
+        display :flex;
+        max-width: 200px;
+    }
+
+    //Hijo
+    .iconos{
+        //Movil
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+    
+        border: black solid 5px;
+
+        @include tablet{
+            flex-direction: row;
+            justify-content: left;
+            
+
+        }
+        
+        
+    }
+
 
     ul p{
         color:$color_Blanco_Texto;
@@ -48,6 +74,8 @@ justify-content: space-around;
 
 
 }
+
+
 
 footer{
 

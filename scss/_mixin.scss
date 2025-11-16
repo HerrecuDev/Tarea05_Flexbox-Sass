@@ -8,3 +8,23 @@
     background-position:center;
     height: 400px;
 }
+
+@mixin tablet{
+
+    @media (min-width:$formatoTablet) {
+        @content;
+    }
+
+
+}
+
+@mixin web{
+
+    @media (min-width:$formatoWeb){
+
+        @content;
+    }
+
+    
+}
+
