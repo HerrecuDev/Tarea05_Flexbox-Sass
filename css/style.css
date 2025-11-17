@@ -20,8 +20,9 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .imagenPrincipal {
@@ -30,12 +31,24 @@ header {
   background-position: center;
   height: 400px;
 }
+.imagenPrincipal .container {
+  border: white solid 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 .imagenPrincipal h1, .imagenPrincipal p {
   color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .color-fondo {
-  border: black solid 5px;
   background: -webkit-gradient(linear, left top, right top, from(#7b0030), to(rgba(163, 79, 0, 0.9058823529)));
   background: linear-gradient(to right, #7b0030, rgba(163, 79, 0, 0.9058823529));
 }
@@ -45,6 +58,7 @@ header {
   display: flex;
 }
 .color-fondo .iconos {
+  border: black solid 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,7 +68,7 @@ header {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  border: black solid 5px;
+  color: white;
 }
 @media (min-width: 480px) {
   .color-fondo .iconos {
@@ -62,17 +76,39 @@ header {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
   }
 }
-.color-fondo ul p {
-  border: black solid 5px;
-  color: white;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+
+.articulos h2 {
+  text-align: center;
+}
+.articulos .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border: red solid 2px;
+}
+@media (min-width: 480px) {
+  .articulos .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-preferred-size: calc(50% - 0.5rem);
+        flex-basis: calc(50% - 0.5rem);
+  }
+}
+@media (min-width: 768px) {
+  .articulos .container {
+    -ms-flex-preferred-size: calc(33.3333333333% - 0.3333333333rem);
+        flex-basis: calc(33.3333333333% - 0.3333333333rem);
+  }
 }
 
 footer {

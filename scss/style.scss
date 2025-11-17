@@ -18,9 +18,10 @@ body{
   margin: 0 auto;
 }
 header{
-display:flex;
-flex-direction: row;
-justify-content: space-around;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
 
 }
 
@@ -28,8 +29,18 @@ justify-content: space-around;
 
     @include buscador();
 
+    .container{
+        border: white solid 5px;
+        display: flex;
+        flex-direction: column;
+        
+       
+       
+    }
+
     h1,p{
         color: $color_Blanco_Texto;
+        justify-content: center;
 
     }
     
@@ -38,44 +49,74 @@ justify-content: space-around;
 }
 //Padre
 .color-fondo{
-    border: black solid 5px;
+    
     
     background: $color_degradado;
 
     div{
         display :flex;
         
+        
     }
 
     //Hijo
     .iconos{
+
+        border: black solid 5px;
+
         //Movil
         display:flex;
         flex-direction: column;
         justify-content: space-around;
-    
-        border: black solid 5px;
+
+        //Color de los iconos y el texto
+        color:$color_Blanco_Texto;
 
         @include tablet{
             flex-direction: row;
-            justify-content: left;
-            
+   
+        }
+
+       
+        
+        
+    }
+
+
+   
+
+
+
+}
+
+.articulos{
+
+    
+    h2{
+       
+        text-align: center;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;//Le decimos al container que si sobrepasa
+                        //Su ancho lo pasa a la siguiente linea
+        
+        border: red solid 2px;
+
+        @include tablet{
+
+            flex-direction: row;
+            flex-basis: $distribucionTablet;
 
         }
-        
-        
+
+        @include web{
+            
+            flex-basis: $distribucionWeb;
+        }
     }
-
-
-    ul p{
-    
-
-        border: black solid 5px;
-        color:$color_Blanco_Texto;
-        align-items: center;
-
-    }
-
 
 
 }

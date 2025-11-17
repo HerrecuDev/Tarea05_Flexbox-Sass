@@ -15,3 +15,8 @@ $formatoWeb: 768px;
 $backgroundBuscador: url(/img/hero.jpg);
 $backgroundBody: white;
 $backgroundFooter: black;
+
+//Calculo reparticion de los articulos
+
+$distribucionTablet: calc(100%/2 - 1rem/2);
+$distribucionWeb: calc(100%/3 - 1rem/3);
