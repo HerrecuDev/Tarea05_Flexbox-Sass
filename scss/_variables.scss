@@ -5,6 +5,9 @@
 $color_Blanco_Texto:white;
 $color_degradado:linear-gradient(to right, #7b0030, #a34f00e7);
 
+//Fuente del texto de la web:
+$font-main: 'Arial', sans-serif;
+
 //Formatos de la pagina
 
 $formatoTablet:480px;
@@ -18,5 +21,5 @@ $backgroundFooter: black;
 
 //Calculo reparticion de los articulos
 
-$distribucionTablet: calc(100%/2 - 1rem/2);
-$distribucionWeb: calc(100%/3 - 1rem/3);
+$distribucionTablet: calc(100%/3);
+$distribucionWeb: calc(100%/2);

@@ -10,6 +10,7 @@
 body{
 
     background-color: $backgroundBody;
+    font-family: $font-main;
 
 }
 
@@ -21,6 +22,12 @@ header{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+
+    i{
+        font-size: 25px;
+        
+    }
     
 
 }
@@ -28,24 +35,37 @@ header{
 .imagenPrincipal{
 
     @include buscador();
-
-    .container{
-        border: white solid 5px;
-        display: flex;
-        flex-direction: column;
-        
-       
-       
-    }
-
-    h1,p{
-        color: $color_Blanco_Texto;
-        justify-content: center;
-
-    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     
+    
+    .buscador{
+        border: white solid 5px;
+        
+        flex-direction: column;
+        flex-grow: 1;
+       
+       
+        color: $color_Blanco_Texto;
 
-   
+
+        //Le doy el tamaño al h1
+        h1{
+            font-size: 50px;
+            padding: 15px;
+            margin-left: 0;
+        }
+       
+        form{
+            
+           
+        }
+        input{
+            padding: 10px;
+            width: 15%;
+        } 
+    }
 }
 //Padre
 .color-fondo{
@@ -77,49 +97,63 @@ header{
    
         }
 
-       
-        
         
     }
 
 
-   
-
-
-
 }
 
-.articulos{
-
-    
+.zonaArticulos{
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
     h2{
        
         text-align: center;
     }
 
-    .container{
+
+    //Propiedades Padre
+
+   
+
+    //Propiedades Hijo
+    .articulos{
+        background-color: red;
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;//Le decimos al container que si sobrepasa
-                        //Su ancho lo pasa a la siguiente linea
-        
-        border: red solid 2px;
+        flex-direction: row;
+        flex-wrap: wrap;   
+        justify-content: space-between; 
 
-        @include tablet{
 
-            flex-direction: row;
-            flex-basis: $distribucionTablet;
+        article{
 
-        }
-
-        @include web{
+            flex-basis: calc(100%/2 - 1rem/2);
+            //Primero le doy las propiedades de hijo
+            @include tablet{
             
-            flex-basis: $distribucionWeb;
+            flex-basis: calc(100%/3 - 2rem/3);
+
+            }
+
+            @include web{
+            
+             flex-basis: calc(100%/4 - 3rem/4);
+            }
+            img {
+                width: 100%;
+            }
+
+            //Como "Padre de los demas elementos"
+          
+            }
+
+        
+        
         }
+
+
     }
-
-
-}
 
 
 
