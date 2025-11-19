@@ -3,6 +3,8 @@
 
 //Colores de la web
 $color_Blanco_Texto:white;
+$colorEstrellas: #F5D627;
+$colorButton:#27DAF5;
 $color_degradado:linear-gradient(to right, #7b0030, #a34f00e7);
 
 //Fuente del texto de la web:
@@ -20,6 +22,6 @@ $backgroundBody: white;
 $backgroundFooter: black;
 
 //Calculo reparticion de los articulos
-
-$distribucionTablet: calc(100%/3);
-$distribucionWeb: calc(100%/2);
+$distribucionMovil:calc(100%/2 - 1rem/2);
+$distribucionTablet: calc(100%/3 - 2rem/3);
+$distribucionWeb: calc(100%/4 - 3rem/4);
