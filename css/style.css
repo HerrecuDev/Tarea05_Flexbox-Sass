@@ -1,3 +1,6 @@
+/*ZONA DEL HEADER*/
+/*ZONA DE LOS CURSOS EN LINEA*/
+/*ZONA DEL FOOTER*/
 * {
   margin: 0;
   padding: 0;
@@ -39,6 +42,31 @@ header i .submenu {
   right: 0;
   background-color: white;
 }
+header i .submenu #contenidoSubmenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+header i .submenu #contenidoSubmenu img {
+  width: 40%;
+}
+header i .submenu #contenidoSubmenu p {
+  font-size: 15px;
+}
+header i .submenu button {
+  display: block;
+  margin: 0 auto;
+  color: white;
+  background-color: #7b0030;
+  border: none;
+  width: 90%;
+  height: 10%;
+  margin-bottom: 10px;
+}
 header i:hover .submenu {
   display: block;
 }
@@ -60,14 +88,21 @@ header i:hover .submenu {
           align-items: center;
 }
 .imagenPrincipal .buscador {
+  color: white;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media (min-width: 768px) {
+  .imagenPrincipal .buscador {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
 }
 .imagenPrincipal .buscador h1 {
   font-size: 50px;
@@ -77,6 +112,8 @@ header i:hover .submenu {
   margin-bottom: 1%;
 }
 .imagenPrincipal .buscador .lupa {
+  background: white;
+  width: 45%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,8 +126,6 @@ header i:hover .submenu {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: white;
-  width: 45%;
 }
 .imagenPrincipal .buscador .lupa input {
   padding: 10px;
@@ -167,6 +202,7 @@ header i:hover .submenu {
       flex-wrap: wrap;
 }
 .zonaArticulos .articulos article {
+  border: gray solid 1px;
   -ms-flex-preferred-size: calc(50% - 0.5rem);
       flex-basis: calc(50% - 0.5rem);
 }
@@ -188,20 +224,27 @@ header i:hover .submenu {
 .zonaArticulos .articulos article i {
   color: #F5D627;
 }
-.zonaArticulos .articulos article p Strong {
-  width: 100%;
-  margin-left: 80%;
-  margin-top: 0;
-  border: red solid 2px;
+.zonaArticulos .articulos article .precios {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .zonaArticulos .articulos article button {
-  padding: 2%;
-  width: 80%;
-  margin-left: 10%;
   color: white;
   background-color: #27DAF5;
   border: none;
-  margin-bottom: 5%;
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  height: 10%;
+  margin-bottom: 20px;
 }
 
 footer {

@@ -30,20 +30,40 @@ header{
     //Aqui generamos el submenu del carrito
 
     i{
-        font-size: 25px;
-        position: relative;
-        display: block;
-
+        @include configuracionCarrito();
 
             .submenu{
-                display: none;
-                position: absolute;
-                right: 0;
-                background-color: white;
+              
+                @include posicionamientoSubmenu();
+                
 
+
+                #contenidoSubmenu{
+                    display: flex;
+                    flex-direction: column;
+                    
+                  
+                    
+
+                    img{
+                        width: 40%;
+                       
+                    }
+
+                    p{
+                        font-size: 15px;
+                    }
+                }
+
+                button{
+
+                    @include configuracionButtonCarrito();
+
+                }
                 
             }
 
+            //Lo dejamos en block para que cuando pasemos por encima aparezca:
                 &:hover .submenu{
                     display: block;
                 }
@@ -56,19 +76,28 @@ header{
 
 .imagenPrincipal{
 
-    @include buscador();
+    @include imagenFondoBuscador();
     display: flex;
     flex-direction: row;
     align-items: center;
     
     
     .buscador{
+
+        //color texto 
+         color: $color_Blanco_Texto;
+
+         //Cuando sea movil o tablet el contenido se centra
+            flex-direction: column;
+            justify-content: center;
+         
+
+
+        @include web{
+            
+            flex-grow: 1;
+        }
         
-        flex-direction: column;
-        flex-grow: 1;
-       
-       
-        color: $color_Blanco_Texto;
 
 
         //Le doy el tamaño al h1
@@ -82,19 +111,23 @@ header{
         }
        
        .lupa{
+
+            background: white;
+            width: 45%;
+           
+            
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
             
-            background: white;
-            width: 45%;
            
 
                 input{
-                                      padding: 10px;
+                       
+                    padding: 10px; //ancho de la barra de busqueda
                     border:none;
-                    outline: none;
+                    outline: none;//desaparezca el borde de la barra de busqueda
                     
                 }
                 i{
@@ -159,8 +192,10 @@ header{
             flex-wrap: wrap;
 
             article{
+
+                //le aplico un borde a cada articulo
+                border: gray solid 1px;
                 //Movil
-               
                 flex-basis: $distribucionMovil;
                 //Tablet
                 @include tablet{
@@ -183,28 +218,19 @@ header{
                     color: $colorEstrellas;
                    
                 }
-              
-                p Strong{
-                    width: 100%;
-                    margin-left: 80%;
-                    margin-top: 0;
-                    border:red solid 2px;
-                }
+              //Para poder colocar el precio y el precio en oferta uno al lado del otro
+              .precios{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+               
+               
+              }
 
                 button{
                 
-                    padding: 2%;
+                    @include formatoButtonArticulos();
                     
-                    margin-left: 10%;
-                    color: $color_Blanco_Texto;
-                    background-color:$colorButton;
-                    border: none;
-
-                    margin-bottom: 5%;
-                    
-
-
-                    //Usamos el align-self: center; para centrar el boton
                 }
 
             }

@@ -1,14 +1,4 @@
-//Header : 
-
-@mixin buscador{
-
-
-    background-image:$backgroundBuscador;
-    background-size:cover ;
-    background-position:center;
-    height: 400px;
-}
-
+//Formatos Disponibles
 @mixin tablet{
 
     @media (min-width:$formatoTablet) {
@@ -25,6 +15,91 @@
         @content;
     }
 
+    
+}
+
+
+/*ZONA DEL HEADER*/
+@mixin imagenFondoBuscador{
+
+
+    background-image:$backgroundBuscador;
+    background-size:cover ;
+    background-position:center;
+    height: 400px;
+}
+
+
+//Genero un mixing para realizar el responsive del submenu :
+@mixin configuracionCarrito{
+
+    font-size: 25px;
+    position: relative;
+    display: block;
+
+}
+@mixin posicionamientoSubmenu{
+
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+
+   
+
+}
+@mixin configuracionButtonCarrito{
+
+    
+    display: block;
+    margin: 0 auto;
+    color: $color_Blanco_Texto;
+    background-color:#7b0030;
+    border: none;
+    width: 90%;
+    height: 10%;
+
+    margin-bottom: 10px;
+
+
+
+
+}
+
+
+
+
+/*ZONA DE LOS CURSOS EN LINEA*/
+
+
+@mixin formatoButtonArticulos{
+
+   //Diseño
+    color: $color_Blanco_Texto;
+    background-color:$colorButton;
+    border: none;
+
+    //Posicionamiento Centrado --Tambien se puede con flexBox.
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    height: 10%;
+    margin-bottom: 20px;
+    
+   
+
+
+}
+
+
+
+/*ZONA DEL FOOTER*/
+
+@mixin formatoUlFooter{
+
+    list-style: none;
+    padding: 2%;
+    width: 100%;
     
 }
 
