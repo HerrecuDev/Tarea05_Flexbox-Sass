@@ -194,7 +194,7 @@ header{
                 button{
                 
                     padding: 2%;
-                    width: 80%;
+                    
                     margin-left: 10%;
                     color: $color_Blanco_Texto;
                     background-color:$colorButton;
@@ -202,6 +202,9 @@ header{
 
                     margin-bottom: 5%;
                     
+
+
+                    //Usamos el align-self: center; para centrar el boton
                 }
 
             }
