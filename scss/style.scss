@@ -62,7 +62,7 @@ header{
 
                 button{
 
-                    color: $color_Blanco_Texto;
+                    color: $color_Blanco;
                     background-color:#7b0030;
                     border: none;
                     padding: 1rem;    
@@ -73,12 +73,12 @@ header{
 
             //Lo dejamos en block para que cuando pasemos por encima aparezca:
                 &:hover .submenu{
-                    display: flex;
-                    flex-direction: column;
-                    position: absolute;
-                    right: 0;
-                    background-color: white;
-                                }
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        right: 0;
+                        background-color: $color_Blanco;
+                 }
         
     }
     
@@ -92,59 +92,73 @@ header{
     display: flex;
     flex-direction: row;
     align-items: center;
-    
+
+   
     
     .buscador{
 
+         //Cuando sea movil o tablet
+        display: flex;
+        flex-direction: column;
+        
+        
+
         //color texto 
-         color: $color_Blanco_Texto;
+         color: $color_Blanco;
 
-         //Cuando sea movil o tablet el contenido se centra
-            flex-direction: column;
-            
+
+
+       //El contenedor buscador cuando este en web
+       @include web{
         
-        @include web{
-            
-            flex-grow: 1;
-        }
         
-
-
-        //Le doy el tamaño al h1
-        h1{
-            font-size: 50px;
-            
-        }
-        p{
-            margin-top: 3%;
-            margin-bottom: 1%;
-        }
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-grow: 1;
        
-       .lupa{
-
-            background: white;
-            
-            
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: black;
-           
-
-                input{
-                       
-                    padding: 10px; //ancho de la barra de busqueda
-                    border:none;
-                    outline: none;//desaparezca el borde de la barra de busqueda
-                    
-                }
-                i{
-                    color: red;
-                   
-                }
-
+        
        }
+
+            //Le doy el tamaño al h1
+            h1{
+                
+                @include movil{
+                    font-size:25px;
+                }
+
+                @include tablet{
+                     font-size: 50px;
+                }
+
+               
+                
+            }
+            p{
+                margin-top: 3%;
+                margin-bottom: 1%;
+            }
+       
+                .lupa{
+
+                        background: $color_Blanco;
+                       
+                       
+                        
+                            input{
+                            
+                                padding: 10px; //ancho de la barra de busqueda
+                                border:none;
+                                outline: none;//desaparezca el borde de la barra de busqueda
+                                
+                            }
+                            i{
+                                color: $color_rojo;
+                            
+                            }
+
+                }
+
+
         
     }
 }
@@ -169,10 +183,19 @@ header{
                     justify-content: space-around;
                     align-items: center;
 
-                    p{
-                        text-align: center;
-                        color: $color_Blanco_Texto;
+                    @include movil{
+
+                       
+
+                        p{
+                            text-align: center;
+                            color: $color_Blanco;
+                            font-size: medium;
+                        }
+
                     }
+
+                  
 
                    
                 }
@@ -246,9 +269,9 @@ header{
                             i{
                                 color: $colorEstrellas;
 
-                                @include movil{
-                                    font-size: 10px;
-                                }
+                               @include tablet{
+                                    font-size: medium;
+                               }
                                 
                             }
                     }
@@ -267,7 +290,7 @@ header{
                     button{
                     
                         //Diseño
-                        color: $color_Blanco_Texto;
+                        color: $color_Blanco;
                         background-color:$colorButton;
                         border: none;
                         padding: 0.5rem;
@@ -302,7 +325,7 @@ footer{
         }
 
         ul li{
-            color: $color_Blanco_Texto;
+            color: $color_Blanco;
         }
         
     }

@@ -91,21 +91,37 @@ header i:hover .submenu {
           align-items: center;
 }
 .imagenPrincipal .buscador {
-  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  color: white;
 }
 @media (min-width: 768px) {
   .imagenPrincipal .buscador {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
   }
 }
-.imagenPrincipal .buscador h1 {
-  font-size: 50px;
+@media (min-width: 280px) {
+  .imagenPrincipal .buscador h1 {
+    font-size: 25px;
+  }
+}
+@media (min-width: 480px) {
+  .imagenPrincipal .buscador h1 {
+    font-size: 50px;
+  }
 }
 .imagenPrincipal .buscador p {
   margin-top: 3%;
@@ -113,20 +129,6 @@ header i:hover .submenu {
 }
 .imagenPrincipal .buscador .lupa {
   background: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: black;
 }
 .imagenPrincipal .buscador .lupa input {
   padding: 10px;
@@ -171,9 +173,12 @@ header i:hover .submenu {
       -ms-flex-align: center;
           align-items: center;
 }
-.zonaIconos .capaIconos .iconos p {
-  text-align: center;
-  color: white;
+@media (min-width: 280px) {
+  .zonaIconos .capaIconos .iconos p {
+    text-align: center;
+    color: white;
+    font-size: medium;
+  }
 }
 
 .zonaArticulos {
@@ -239,9 +244,9 @@ header i:hover .submenu {
 .zonaArticulos .articulos article .textoArticulos i {
   color: #F5D627;
 }
-@media (min-width: 280px) {
+@media (min-width: 480px) {
   .zonaArticulos .articulos article .textoArticulos i {
-    font-size: 10px;
+    font-size: medium;
   }
 }
 .zonaArticulos .articulos article .precios {
@@ -284,4 +289,4 @@ footer .container ul {
 }
 footer .container ul li {
   color: white;
-}
+}/*# sourceMappingURL=style.css.map */
