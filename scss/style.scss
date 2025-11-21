@@ -25,39 +25,47 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
 
 
     //Aqui generamos el submenu del carrito
 
     i{
-        @include configuracionCarrito();
-
+        //Diseño del icono del carrito del header para aplicar el hoover
+        font-size: 25px;
+        position: relative;
+        display: block;
+       
             .submenu{
-              
-                @include posicionamientoSubmenu();
-                
+                //Aplicamos el none para que no aparezca hasta que pasemos el raton
+                display: none;
+                //Se permite aplicar padding para darle un ancho alrededor del cuadro del submenu
+                padding: 1rem;
 
 
                 #contenidoSubmenu{
                     display: flex;
-                    flex-direction: column;
+                   
+                    list-style: none;
                     
-                  
-                    
-
-                    img{
-                        width: 40%;
-                       
-                    }
+                   li{
+                    font-size: 15px;
+                    margin: 1rem;
+                   }
 
                     p{
                         font-size: 15px;
+                        align-self: center;
+                        margin: 1rem;
                     }
                 }
 
                 button{
 
-                    @include configuracionButtonCarrito();
+                    color: $color_Blanco_Texto;
+                    background-color:#7b0030;
+                    border: none;
+                    padding: 1rem;    
 
                 }
                 
@@ -65,8 +73,12 @@ header{
 
             //Lo dejamos en block para que cuando pasemos por encima aparezca:
                 &:hover .submenu{
-                    display: block;
-                }
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    right: 0;
+                    background-color: white;
+                                }
         
     }
     
@@ -89,10 +101,8 @@ header{
 
          //Cuando sea movil o tablet el contenido se centra
             flex-direction: column;
-            justify-content: center;
-         
-
-
+            
+        
         @include web{
             
             flex-grow: 1;
@@ -113,14 +123,13 @@ header{
        .lupa{
 
             background: white;
-            width: 45%;
-           
+            
             
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: flex-start;
             align-items: center;
-            
+            background-color: black;
            
 
                 input{
@@ -162,7 +171,7 @@ header{
 
                     p{
                         text-align: center;
-                       
+                        color: $color_Blanco_Texto;
                     }
 
                    
@@ -191,49 +200,81 @@ header{
             justify-content: space-between;
             flex-wrap: wrap;
 
-            article{
-
-                //le aplico un borde a cada articulo
-                border: gray solid 1px;
-                //Movil
-                flex-basis: $distribucionMovil;
-                //Tablet
-                @include tablet{
-
-                    flex-basis:$distribucionTablet;
-
-                }
-
-
-                //Web
-                @include web{
-                    flex-basis:$distribucionWeb;
-                }
-
-                //Hay que darle a las imagenes el 100% 
-                img{
-                    width: 100%;
-                }
-                i{
-                    color: $colorEstrellas;
-                   
-                }
-              //Para poder colocar el precio y el precio en oferta uno al lado del otro
-              .precios{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-               
-               
-              }
-
-                button{
-                
-                    @include formatoButtonArticulos();
+                article{
+                    //Aplico etiquetas de padre en flexbox
+                    display: flex;
+                    flex-direction: column;
                     
+
+                    //Le aplico padding para darle un espacio alrededor de cada articulo
+                    
+                    //le aplico un borde a cada articulo
+                    border: gray solid 1px;
+
+
+                    //Movil
+                    flex-basis: $distribucionMovil;
+
+
+                    //Tablet
+                    @include tablet{
+
+                        flex-basis:$distribucionTablet;
+
+                    }
+
+
+                    //Web
+                    @include web{
+                        flex-basis:$distribucionWeb;
+                    }
+
+                    //Hay que darle a las imagenes el 100% 
+                    img{
+                        width: 100%;
+                    }
+
+                    .textoArticulos{
+
+                        padding: 0.5rem;
+
+                        h3{
+                            font-size: 16px;
+
+                        }
+                        //Diseño iconos
+                            i{
+                                color: $colorEstrellas;
+
+                                @include movil{
+                                    font-size: 10px;
+                                }
+                                
+                            }
+                    }
+
+                //Para poder colocar el precio y el precio en oferta uno al lado del otro
+                .precios{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    
+                
+                
                 }
 
-            }
+                    button{
+                    
+                        //Diseño
+                        color: $color_Blanco_Texto;
+                        background-color:$colorButton;
+                        border: none;
+                        padding: 0.5rem;
+                        
+                    }
+
+                }
         }
 
 }
@@ -245,15 +286,9 @@ footer{
 
     background-color: $backgroundFooter;
 
-    //Le aplico propiedades de PAdre
-    
-    
-
     .container{
 
        display: flex;
-    
-       
 
         ul{
             list-style: none;
@@ -264,17 +299,12 @@ footer{
                 width: 50%;
             }
             
-            
-
         }
 
         ul li{
             color: $color_Blanco_Texto;
         }
         
-
-       
-
     }
 
         

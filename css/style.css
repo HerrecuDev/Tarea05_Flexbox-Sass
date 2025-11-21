@@ -1,6 +1,4 @@
 /*ZONA DEL HEADER*/
-/*ZONA DE LOS CURSOS EN LINEA*/
-/*ZONA DEL FOOTER*/
 * {
   margin: 0;
   padding: 0;
@@ -30,6 +28,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 1rem;
 }
 header i {
   font-size: 25px;
@@ -38,11 +37,31 @@ header i {
 }
 header i .submenu {
   display: none;
-  position: absolute;
-  right: 0;
-  background-color: white;
+  padding: 1rem;
 }
 header i .submenu #contenidoSubmenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+header i .submenu #contenidoSubmenu li {
+  font-size: 15px;
+  margin: 1rem;
+}
+header i .submenu #contenidoSubmenu p {
+  font-size: 15px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 1rem;
+}
+header i .submenu button {
+  color: white;
+  background-color: #7b0030;
+  border: none;
+  padding: 1rem;
+}
+header i:hover .submenu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,25 +69,9 @@ header i .submenu #contenidoSubmenu {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-header i .submenu #contenidoSubmenu img {
-  width: 40%;
-}
-header i .submenu #contenidoSubmenu p {
-  font-size: 15px;
-}
-header i .submenu button {
-  display: block;
-  margin: 0 auto;
-  color: white;
-  background-color: #7b0030;
-  border: none;
-  width: 90%;
-  height: 10%;
-  margin-bottom: 10px;
-}
-header i:hover .submenu {
-  display: block;
+  position: absolute;
+  right: 0;
+  background-color: white;
 }
 
 .imagenPrincipal {
@@ -93,9 +96,6 @@ header i:hover .submenu {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 @media (min-width: 768px) {
   .imagenPrincipal .buscador {
@@ -113,7 +113,6 @@ header i:hover .submenu {
 }
 .imagenPrincipal .buscador .lupa {
   background: white;
-  width: 45%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,11 +120,13 @@ header i:hover .submenu {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: black;
 }
 .imagenPrincipal .buscador .lupa input {
   padding: 10px;
@@ -172,6 +173,7 @@ header i:hover .submenu {
 }
 .zonaIconos .capaIconos .iconos p {
   text-align: center;
+  color: white;
 }
 
 .zonaArticulos {
@@ -202,6 +204,13 @@ header i:hover .submenu {
       flex-wrap: wrap;
 }
 .zonaArticulos .articulos article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border: gray solid 1px;
   -ms-flex-preferred-size: calc(50% - 0.5rem);
       flex-basis: calc(50% - 0.5rem);
@@ -221,8 +230,19 @@ header i:hover .submenu {
 .zonaArticulos .articulos article img {
   width: 100%;
 }
-.zonaArticulos .articulos article i {
+.zonaArticulos .articulos article .textoArticulos {
+  padding: 0.5rem;
+}
+.zonaArticulos .articulos article .textoArticulos h3 {
+  font-size: 16px;
+}
+.zonaArticulos .articulos article .textoArticulos i {
   color: #F5D627;
+}
+@media (min-width: 280px) {
+  .zonaArticulos .articulos article .textoArticulos i {
+    font-size: 10px;
+  }
 }
 .zonaArticulos .articulos article .precios {
   display: -webkit-box;
@@ -235,16 +255,13 @@ header i:hover .submenu {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 1rem;
 }
 .zonaArticulos .articulos article button {
   color: white;
   background-color: #27DAF5;
   border: none;
-  display: block;
-  margin: 0 auto;
-  width: 90%;
-  height: 10%;
-  margin-bottom: 20px;
+  padding: 0.5rem;
 }
 
 footer {
@@ -267,4 +284,4 @@ footer .container ul {
 }
 footer .container ul li {
   color: white;
-}/*# sourceMappingURL=style.css.map */
+}
